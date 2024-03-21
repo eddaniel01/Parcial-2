@@ -2,13 +2,10 @@ package pucmm.edu.controladores;
 import static pucmm.edu.Main.*;
 
 import io.javalin.http.Handler;
-import io.javalin.http.UploadedFile;
 import org.jasypt.util.text.BasicTextEncryptor;
-import pucmm.edu.encapsulaciones.Foto;
 import pucmm.edu.encapsulaciones.Usuario;
 import pucmm.edu.util.*;
 
-import java.util.Base64;
 import java.util.Map;
 
 public class UsuarioControlador {
@@ -55,11 +52,7 @@ public class UsuarioControlador {
                 ctx.sessionAttribute("mensaje", "No puede eliminar su usuario");
                 ctx.redirect(Path.Web.FETCH_USUARIOS);
             }else{
-                Foto foto = user.getFoto();
                 if(usuarioServices.eliminarById(RequestUtil.getParamId(ctx))){
-                    if(foto != null){
-                        fotoServices.eliminar(foto);
-                    }
                     ctx.sessionAttribute("usuarioFailed", false);
                     ctx.sessionAttribute("usuarioSucceeded", true);
                     ctx.sessionAttribute("mensaje", "Usuario eliminado exitosamente");
@@ -85,18 +78,6 @@ public class UsuarioControlador {
                 user.setRol(RolesApp.ROLE_ADMIN);
             }else if(RequestUtil.getQueryRol(ctx).equalsIgnoreCase("autor")){
                 user.setRol(RolesApp.ROLE_USUARIO);
-            }
-            UploadedFile pic = RequestUtil.getUploadedFile(ctx);
-            if(pic != null && !pic.filename().equalsIgnoreCase("")){
-                try {
-                    byte[] bytes = pic.content().readAllBytes();
-                    String encodedString = Base64.getEncoder().encodeToString(bytes);
-                    Foto foto = new Foto(pic.filename(), pic.contentType(), encodedString);
-                    fotoServices.crear(foto);
-                    user.setFoto(foto);
-                } catch (Exception e) {
-                    // TODO: handle exception
-                }
             }
             if(usuarioServices.getUsuarioByUsername(user.getUsuario())== null || user.getUsuario().equalsIgnoreCase(nombre_usuario)){
                 if(usuarioServices.editar(user) != null){
@@ -138,19 +119,7 @@ public class UsuarioControlador {
                 rol = RolesApp.ROLE_USUARIO;
             }
             if(usuarioServices.getUsuarioByUsername(username)== null){
-                UploadedFile pic = RequestUtil.getUploadedFile(ctx);
                 user = new Usuario(nombre, username, password, rol);
-                if(pic != null && !pic.filename().equalsIgnoreCase("")){
-                    try {
-                        byte[] bytes = pic.content().readAllBytes();
-                        String encodedString = Base64.getEncoder().encodeToString(bytes);
-                        Foto foto = new Foto(pic.filename(), pic.contentType(), encodedString);
-                        fotoServices.crear(foto);
-                        user.setFoto(foto);
-                    } catch (Exception e) {
-                        // TODO: handle exception
-                    }
-                }
                 user = usuarioServices.crear(user);
                 if(user != null){
                     ctx.sessionAttribute("usuarioSucceeded", true);

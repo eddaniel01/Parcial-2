@@ -20,14 +20,12 @@ import pucmm.edu.controladores.IndexControlador;
 import pucmm.edu.controladores.LoginControlador;
 import pucmm.edu.controladores.UsuarioControlador;
 import pucmm.edu.encapsulaciones.Formulario;
-import pucmm.edu.encapsulaciones.Foto;
 import pucmm.edu.encapsulaciones.Usuario;
 import pucmm.edu.grpc.FormularioServicesGrpc;
 import pucmm.edu.rest.ProviderExample;
 import pucmm.edu.rest.RestControlador;
 import pucmm.edu.servicios.CockroachServices;
 import pucmm.edu.servicios.FormularioServices;
-import pucmm.edu.servicios.FotoServices;
 import pucmm.edu.servicios.UsuarioServices;
 import pucmm.edu.util.RolesApp;
 import pucmm.edu.util.ViewUtil;
@@ -44,7 +42,6 @@ import static io.javalin.apibuilder.ApiBuilder.*;
 
 public class Main {
     public static UsuarioServices usuarioServices;
-    public static FotoServices fotoServices;
     public static FormularioServices formularioServices;
     public static CockroachServices cockroachServices;
     public static String usuarioActual;
@@ -55,7 +52,7 @@ public class Main {
 
         JavalinRenderer.register(new JavalinVelocity(), ".vm");
         usuarioServices = UsuarioServices.getInstancia();
-        fotoServices = FotoServices.getInstancia();
+//        fotoServices = FotoServices.getInstancia();
         formularioServices = FormularioServices.getInstancia();
         cockroachServices = CockroachServices.getInstancia();
         cockroachServices.crearTablas();
@@ -64,8 +61,8 @@ public class Main {
             usuarioServices.crear(new Usuario("user", "user", "user", RolesApp.ROLE_USUARIO));
         }
         if(formularioServices.findAll().isEmpty()){
-            formularioServices.crear(new Formulario("Formulario 1", "Sector 1", "Grado", usuarioServices.getUsuarioByUsername("admin"), "18.4861", "-69.9312", "10", fotoServices.crear(new Foto("Foto 1", "image/png", "base64"))));
-            formularioServices.crear(new Formulario("Formulario 2", "Sector 2", "Doctorado", usuarioServices.getUsuarioByUsername("user"), "18.4861", "-69.9312", "10", fotoServices.crear(new Foto("Foto 2", "image/png", "base64"))));
+            formularioServices.crear(new Formulario("Formulario 1", "Sector 1", "Grado", usuarioServices.getUsuarioByUsername("admin"), "18.4861", "-69.9312", "10"));
+            formularioServices.crear(new Formulario("Formulario 2", "Sector 2", "Doctorado", usuarioServices.getUsuarioByUsername("user"), "18.4861", "-69.9312", "10"));
         }
         //Creando la instancia del servidor y configurando.
         Javalin app = Javalin.create(config ->{
@@ -234,9 +231,7 @@ public class Main {
             ws.onMessage(ctx -> {
                 ObjectMapper objectMapper = new ObjectMapper();
                 JsonNode jsonNode = objectMapper.readTree(ctx.message());
-                Foto foto = fotoServices.crear(new Foto(jsonNode.get("nombre").toString().replaceAll("\"", ""), jsonNode.get("mimetype").toString().replaceAll("\"", ""), jsonNode.get("base64").toString().replaceAll("\"", "")));
-
-                Formulario form = formularioServices.crear(new Formulario(jsonNode.get("nombre").toString().replaceAll("\"", ""), jsonNode.get("sector").toString().replaceAll("\"", ""), jsonNode.get("nivel").toString().replaceAll("\"", ""), usuarioServices.getUsuarioByUsername(usuarioActual), jsonNode.get("latitude").toString(), jsonNode.get("longitude").toString(), jsonNode.get("accuracy").toString(), foto));
+                Formulario form = formularioServices.crear(new Formulario(jsonNode.get("nombre").toString().replaceAll("\"", ""), jsonNode.get("sector").toString().replaceAll("\"", ""), jsonNode.get("nivel").toString().replaceAll("\"", ""), usuarioServices.getUsuarioByUsername(usuarioActual), jsonNode.get("latitude").toString(), jsonNode.get("longitude").toString(), jsonNode.get("accuracy").toString()));
 
                 if(form != null){
                     ctx.session.getRemote().sendString(jsonNode.get("id").toString());

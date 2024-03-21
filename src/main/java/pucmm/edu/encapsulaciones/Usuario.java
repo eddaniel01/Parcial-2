@@ -22,16 +22,12 @@ public class Usuario {
     private RolesApp rol;
     private String fecha;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    private Foto foto;
-
     public Usuario(){};
     public Usuario(String nombre, String usuario, String clave, RolesApp rol) {
         this.nombre = nombre;
         this.usuario = usuario;
         this.clave = clave;
         this.rol = rol;
-        this.foto = null;
         this.fecha = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss"));
     }
 
@@ -68,10 +64,6 @@ public class Usuario {
     public void setRol(RolesApp rol) {
         this.rol = rol;
     }
-
-    public Foto getFoto() { return foto; }
-
-    public void setFoto(Foto foto) { this.foto = foto; }
 
     public String getFecha() {
         return fecha;

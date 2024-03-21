@@ -679,40 +679,26 @@ public final class FormularioRnOuterClass {
         getAccuracyBytes();
 
     /**
+     * <pre>
+     *  string mimetype=9;
+     *  string base64=10;
+     * </pre>
+     *
      * <code>string usuario = 8;</code>
      * @return The usuario.
      */
     java.lang.String getUsuario();
     /**
+     * <pre>
+     *  string mimetype=9;
+     *  string base64=10;
+     * </pre>
+     *
      * <code>string usuario = 8;</code>
      * @return The bytes for usuario.
      */
     com.google.protobuf.ByteString
         getUsuarioBytes();
-
-    /**
-     * <code>string mimetype = 9;</code>
-     * @return The mimetype.
-     */
-    java.lang.String getMimetype();
-    /**
-     * <code>string mimetype = 9;</code>
-     * @return The bytes for mimetype.
-     */
-    com.google.protobuf.ByteString
-        getMimetypeBytes();
-
-    /**
-     * <code>string base64 = 10;</code>
-     * @return The base64.
-     */
-    java.lang.String getBase64();
-    /**
-     * <code>string base64 = 10;</code>
-     * @return The bytes for base64.
-     */
-    com.google.protobuf.ByteString
-        getBase64Bytes();
   }
   /**
    * Protobuf type {@code formulariorn.FormularioResponse}
@@ -735,8 +721,6 @@ public final class FormularioRnOuterClass {
       longitude_ = "";
       accuracy_ = "";
       usuario_ = "";
-      mimetype_ = "";
-      base64_ = "";
     }
 
     @java.lang.Override
@@ -815,18 +799,6 @@ public final class FormularioRnOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               usuario_ = s;
-              break;
-            }
-            case 74: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              mimetype_ = s;
-              break;
-            }
-            case 82: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              base64_ = s;
               break;
             }
             default: {
@@ -1130,6 +1102,11 @@ public final class FormularioRnOuterClass {
     public static final int USUARIO_FIELD_NUMBER = 8;
     private volatile java.lang.Object usuario_;
     /**
+     * <pre>
+     *  string mimetype=9;
+     *  string base64=10;
+     * </pre>
+     *
      * <code>string usuario = 8;</code>
      * @return The usuario.
      */
@@ -1147,6 +1124,11 @@ public final class FormularioRnOuterClass {
       }
     }
     /**
+     * <pre>
+     *  string mimetype=9;
+     *  string base64=10;
+     * </pre>
+     *
      * <code>string usuario = 8;</code>
      * @return The bytes for usuario.
      */
@@ -1159,82 +1141,6 @@ public final class FormularioRnOuterClass {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         usuario_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int MIMETYPE_FIELD_NUMBER = 9;
-    private volatile java.lang.Object mimetype_;
-    /**
-     * <code>string mimetype = 9;</code>
-     * @return The mimetype.
-     */
-    @java.lang.Override
-    public java.lang.String getMimetype() {
-      java.lang.Object ref = mimetype_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        mimetype_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string mimetype = 9;</code>
-     * @return The bytes for mimetype.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getMimetypeBytes() {
-      java.lang.Object ref = mimetype_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        mimetype_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int BASE64_FIELD_NUMBER = 10;
-    private volatile java.lang.Object base64_;
-    /**
-     * <code>string base64 = 10;</code>
-     * @return The base64.
-     */
-    @java.lang.Override
-    public java.lang.String getBase64() {
-      java.lang.Object ref = base64_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        base64_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string base64 = 10;</code>
-     * @return The bytes for base64.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getBase64Bytes() {
-      java.lang.Object ref = base64_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        base64_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1279,12 +1185,6 @@ public final class FormularioRnOuterClass {
       if (!getUsuarioBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, usuario_);
       }
-      if (!getMimetypeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, mimetype_);
-      }
-      if (!getBase64Bytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, base64_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -1318,12 +1218,6 @@ public final class FormularioRnOuterClass {
       if (!getUsuarioBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, usuario_);
       }
-      if (!getMimetypeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, mimetype_);
-      }
-      if (!getBase64Bytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, base64_);
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1355,10 +1249,6 @@ public final class FormularioRnOuterClass {
           .equals(other.getAccuracy())) return false;
       if (!getUsuario()
           .equals(other.getUsuario())) return false;
-      if (!getMimetype()
-          .equals(other.getMimetype())) return false;
-      if (!getBase64()
-          .equals(other.getBase64())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1386,10 +1276,6 @@ public final class FormularioRnOuterClass {
       hash = (53 * hash) + getAccuracy().hashCode();
       hash = (37 * hash) + USUARIO_FIELD_NUMBER;
       hash = (53 * hash) + getUsuario().hashCode();
-      hash = (37 * hash) + MIMETYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getMimetype().hashCode();
-      hash = (37 * hash) + BASE64_FIELD_NUMBER;
-      hash = (53 * hash) + getBase64().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1539,10 +1425,6 @@ public final class FormularioRnOuterClass {
 
         usuario_ = "";
 
-        mimetype_ = "";
-
-        base64_ = "";
-
         return this;
       }
 
@@ -1577,8 +1459,6 @@ public final class FormularioRnOuterClass {
         result.longitude_ = longitude_;
         result.accuracy_ = accuracy_;
         result.usuario_ = usuario_;
-        result.mimetype_ = mimetype_;
-        result.base64_ = base64_;
         onBuilt();
         return result;
       }
@@ -1657,14 +1537,6 @@ public final class FormularioRnOuterClass {
         }
         if (!other.getUsuario().isEmpty()) {
           usuario_ = other.usuario_;
-          onChanged();
-        }
-        if (!other.getMimetype().isEmpty()) {
-          mimetype_ = other.mimetype_;
-          onChanged();
-        }
-        if (!other.getBase64().isEmpty()) {
-          base64_ = other.base64_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -2230,6 +2102,11 @@ public final class FormularioRnOuterClass {
 
       private java.lang.Object usuario_ = "";
       /**
+       * <pre>
+       *  string mimetype=9;
+       *  string base64=10;
+       * </pre>
+       *
        * <code>string usuario = 8;</code>
        * @return The usuario.
        */
@@ -2246,6 +2123,11 @@ public final class FormularioRnOuterClass {
         }
       }
       /**
+       * <pre>
+       *  string mimetype=9;
+       *  string base64=10;
+       * </pre>
+       *
        * <code>string usuario = 8;</code>
        * @return The bytes for usuario.
        */
@@ -2263,6 +2145,11 @@ public final class FormularioRnOuterClass {
         }
       }
       /**
+       * <pre>
+       *  string mimetype=9;
+       *  string base64=10;
+       * </pre>
+       *
        * <code>string usuario = 8;</code>
        * @param value The usuario to set.
        * @return This builder for chaining.
@@ -2278,6 +2165,11 @@ public final class FormularioRnOuterClass {
         return this;
       }
       /**
+       * <pre>
+       *  string mimetype=9;
+       *  string base64=10;
+       * </pre>
+       *
        * <code>string usuario = 8;</code>
        * @return This builder for chaining.
        */
@@ -2288,6 +2180,11 @@ public final class FormularioRnOuterClass {
         return this;
       }
       /**
+       * <pre>
+       *  string mimetype=9;
+       *  string base64=10;
+       * </pre>
+       *
        * <code>string usuario = 8;</code>
        * @param value The bytes for usuario to set.
        * @return This builder for chaining.
@@ -2300,158 +2197,6 @@ public final class FormularioRnOuterClass {
   checkByteStringIsUtf8(value);
         
         usuario_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object mimetype_ = "";
-      /**
-       * <code>string mimetype = 9;</code>
-       * @return The mimetype.
-       */
-      public java.lang.String getMimetype() {
-        java.lang.Object ref = mimetype_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          mimetype_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string mimetype = 9;</code>
-       * @return The bytes for mimetype.
-       */
-      public com.google.protobuf.ByteString
-          getMimetypeBytes() {
-        java.lang.Object ref = mimetype_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          mimetype_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string mimetype = 9;</code>
-       * @param value The mimetype to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMimetype(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        mimetype_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string mimetype = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMimetype() {
-        
-        mimetype_ = getDefaultInstance().getMimetype();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string mimetype = 9;</code>
-       * @param value The bytes for mimetype to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMimetypeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        mimetype_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object base64_ = "";
-      /**
-       * <code>string base64 = 10;</code>
-       * @return The base64.
-       */
-      public java.lang.String getBase64() {
-        java.lang.Object ref = base64_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          base64_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string base64 = 10;</code>
-       * @return The bytes for base64.
-       */
-      public com.google.protobuf.ByteString
-          getBase64Bytes() {
-        java.lang.Object ref = base64_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          base64_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string base64 = 10;</code>
-       * @param value The base64 to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBase64(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        base64_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string base64 = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBase64() {
-        
-        base64_ = getDefaultInstance().getBase64();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string base64 = 10;</code>
-       * @param value The bytes for base64 to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBase64Bytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        base64_ = value;
         onChanged();
         return this;
       }
@@ -3757,21 +3502,20 @@ public final class FormularioRnOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\022FormularioRn.proto\022\014formulariorn\"$\n\021Fo" +
-      "rmularioRequest\022\017\n\007usuario\030\001 \001(\t\"\274\001\n\022For" +
+      "rmularioRequest\022\017\n\007usuario\030\001 \001(\t\"\232\001\n\022For" +
       "mularioResponse\022\016\n\006nombre\030\001 \001(\t\022\016\n\006secto" +
       "r\030\002 \001(\t\022\r\n\005nivel\030\003 \001(\t\022\r\n\005fecha\030\004 \001(\t\022\020\n" +
       "\010latitude\030\005 \001(\t\022\021\n\tlongitude\030\006 \001(\t\022\020\n\010ac" +
-      "curacy\030\007 \001(\t\022\017\n\007usuario\030\010 \001(\t\022\020\n\010mimetyp" +
-      "e\030\t \001(\t\022\016\n\006base64\030\n \001(\t\"G\n\017ListaFormular" +
-      "io\0224\n\nformulario\030\001 \003(\0132 .formulariorn.Fo" +
-      "rmularioResponse\"\007\n\005Empty2\204\002\n\014Formulario" +
-      "Rn\022V\n\024listaFormularioxUser\022\037.formularior" +
-      "n.FormularioRequest\032\035.formulariorn.Lista" +
-      "Formulario\022U\n\017crearFormulario\022 .formular" +
-      "iorn.FormularioResponse\032 .formulariorn.F" +
-      "ormularioResponse\022E\n\017listaFormulario\022\023.f" +
-      "ormulariorn.Empty\032\035.formulariorn.ListaFo" +
-      "rmulariob\006proto3"
+      "curacy\030\007 \001(\t\022\017\n\007usuario\030\010 \001(\t\"G\n\017ListaFo" +
+      "rmulario\0224\n\nformulario\030\001 \003(\0132 .formulari" +
+      "orn.FormularioResponse\"\007\n\005Empty2\204\002\n\014Form" +
+      "ularioRn\022V\n\024listaFormularioxUser\022\037.formu" +
+      "lariorn.FormularioRequest\032\035.formulariorn" +
+      ".ListaFormulario\022U\n\017crearFormulario\022 .fo" +
+      "rmulariorn.FormularioResponse\032 .formular" +
+      "iorn.FormularioResponse\022E\n\017listaFormular" +
+      "io\022\023.formulariorn.Empty\032\035.formulariorn.L" +
+      "istaFormulariob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3788,7 +3532,7 @@ public final class FormularioRnOuterClass {
     internal_static_formulariorn_FormularioResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_formulariorn_FormularioResponse_descriptor,
-        new java.lang.String[] { "Nombre", "Sector", "Nivel", "Fecha", "Latitude", "Longitude", "Accuracy", "Usuario", "Mimetype", "Base64", });
+        new java.lang.String[] { "Nombre", "Sector", "Nivel", "Fecha", "Latitude", "Longitude", "Accuracy", "Usuario", });
     internal_static_formulariorn_ListaFormulario_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_formulariorn_ListaFormulario_fieldAccessorTable = new

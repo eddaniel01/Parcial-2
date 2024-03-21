@@ -70,14 +70,14 @@
             <div class="header-right">
                 <ul class="clearfix">
                     <li class="icons dropdown">
-                        <div class="user-img c-pointer position-relative"   data-toggle="dropdown">
-                            <span class="activity active"></span>
-                            #if($fotoperfil)
-                                <img src="$fotoperfil" height="40" width="40" alt="">
-                            #else
-                                <img src="/images/user/form-user.png" height="40" width="40" alt="">
-                            #end
-                        </div>
+##                        <div class="user-img c-pointer position-relative"   data-toggle="dropdown">
+##                            <span class="activity active"></span>
+####                            #if($fotoperfil)
+####                                <img src="$fotoperfil" height="40" width="40" alt="">
+####                            #else
+####                                <img src="/images/user/form-user.png" height="40" width="40" alt="">
+####                            #end
+##                        </div>
                         <div class="drop-down dropdown-profile   dropdown-menu">
                             <div class="dropdown-content-body">
                                 <ul>
@@ -152,7 +152,7 @@
     ***********************************-->
     <div class="footer">
         <div class="copyright">
-            <p>Copyright &copy; Designed & Developed by <a href="https://github.com/radf0001">Playdomtv</a> 2023</p>
+            <p>Copyright &copy; Designed & Developed by <a href="https://github.com/eddaniel01/Parcial-2">Playdomtv</a> 2024</p>
         </div>
     </div>
     <!--**********************************

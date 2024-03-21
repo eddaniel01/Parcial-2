@@ -18,8 +18,8 @@ message FormularioResponse{
   string longitude=6;
   string accuracy=7;
   string usuario=8;
-  string mimetype=9;
-  string base64=10;
+//  string mimetype=9;
+//  string base64=10;
 }
 
 message ListaFormulario{

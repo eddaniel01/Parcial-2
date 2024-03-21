@@ -38,12 +38,6 @@ public class FormularioServices extends GestionDb<Formulario> {
             em.close();
         }
         return formularios;
-
-//        try (MorphiaSession session = getDatastore().startSession()) {
-//            return session.find(Formulario.class).filter(eq("user", id)).stream().toList();
-//        } catch (Exception e) {
-//            return null;
-//        }
     }
 
 //    public boolean eliminarById(String id) {

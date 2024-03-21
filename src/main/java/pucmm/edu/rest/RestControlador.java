@@ -3,7 +3,6 @@ import io.javalin.http.Handler;
 import javalinjwt.JavalinJWT;
 import pucmm.edu.controladores.LoginControlador;
 import pucmm.edu.encapsulaciones.Formulario;
-import pucmm.edu.encapsulaciones.Foto;
 import pucmm.edu.encapsulaciones.Usuario;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import java.util.Optional;
@@ -52,10 +51,7 @@ public class RestControlador {
         //parseando la informacion del POJO debe venir en formato json.
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode jsonNode = objectMapper.readTree(ctx.body());
-
-        Foto foto = fotoServices.crear(new Foto(jsonNode.get("nombre").toString().replaceAll("\"", ""), jsonNode.get("mimetype").toString().replaceAll("\"", ""), jsonNode.get("base64").toString().replaceAll("\"", "")));
-
-        Formulario form = formularioServices.crear(new Formulario(jsonNode.get("nombre").toString().replaceAll("\"", ""), jsonNode.get("sector").toString().replaceAll("\"", ""), jsonNode.get("nivel").toString().replaceAll("\"", ""), usuarioServices.getUsuarioByUsername(decodedJWT.get().getClaim("name").asString()), jsonNode.get("latitude").toString().replaceAll("\"", ""), jsonNode.get("longitude").toString().replaceAll("\"", ""), jsonNode.get("accuracy").toString().replaceAll("\"", ""), foto));
+        Formulario form = formularioServices.crear(new Formulario(jsonNode.get("nombre").toString().replaceAll("\"", ""), jsonNode.get("sector").toString().replaceAll("\"", ""), jsonNode.get("nivel").toString().replaceAll("\"", ""), usuarioServices.getUsuarioByUsername(decodedJWT.get().getClaim("name").asString()), jsonNode.get("latitude").toString().replaceAll("\"", ""), jsonNode.get("longitude").toString().replaceAll("\"", ""), jsonNode.get("accuracy").toString().replaceAll("\"", "")));
 
         if(form != null){
           ctx.json(formularioServices.crear(form));

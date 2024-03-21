@@ -4,7 +4,6 @@ import formulariorn.FormularioRnGrpc;
 import formulariorn.FormularioRnOuterClass;
 import io.grpc.stub.StreamObserver;
 import pucmm.edu.encapsulaciones.Formulario;
-import pucmm.edu.encapsulaciones.Foto;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -64,8 +63,6 @@ public class FormularioServicesGrpc extends FormularioRnGrpc.FormularioRnImplBas
                 .setLongitude(formulario.getLongitude())
                 .setAccuracy(formulario.getAccuracy())
                 .setUsuario(formulario.getUser().getUsuario())
-                .setMimetype(formulario.getFoto().getMimeType())
-                .setBase64(formulario.getFoto().getFotoBase64())
                 .build();
     }
 
@@ -75,8 +72,6 @@ public class FormularioServicesGrpc extends FormularioRnGrpc.FormularioRnImplBas
      * @return
      */
     private Formulario convertir(FormularioRnOuterClass.FormularioResponse e){
-        Foto foto = fotoServices.crear(new Foto(e.getNombre(), e.getMimetype(), e.getBase64()));
-
-        return new Formulario(e.getNombre(), e.getSector(), e.getNivel(), usuarioServices.getUsuarioByUsername(e.getUsuario()), e.getLatitude(), e.getLongitude(), e.getAccuracy(), foto); 
+        return new Formulario(e.getNombre(), e.getSector(), e.getNivel(), usuarioServices.getUsuarioByUsername(e.getUsuario()), e.getLatitude(), e.getLongitude(), e.getAccuracy());
     }
 }

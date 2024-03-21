@@ -24,11 +24,8 @@ public class Formulario {
     @ManyToOne(optional = false, fetch = FetchType.EAGER)
     private Usuario user;
 
-    @OneToOne
-    private Foto foto;
-
     public Formulario(){};
-    public Formulario(String nombre, String sector, String nivelEscolar, Usuario user, String latitude, String longitude, String accuracy, Foto foto) {
+    public Formulario(String nombre, String sector, String nivelEscolar, Usuario user, String latitude, String longitude, String accuracy) {
         this.nombre = nombre;
         this.sector = sector;
         this.nivelEscolar = nivelEscolar;
@@ -37,7 +34,6 @@ public class Formulario {
         this.latitude = latitude;
         this.longitude = longitude;
         this.accuracy = accuracy;
-        this.foto = foto;
     }
 
     public String getNombre() {
@@ -106,12 +102,7 @@ public class Formulario {
     public void setAccuracy(String accuracy) {
         this.accuracy = accuracy;
     }
-    public Foto getFoto() {
-        return foto;
-    }
-    public void setFoto(Foto foto) {
-        this.foto = foto;
-    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
