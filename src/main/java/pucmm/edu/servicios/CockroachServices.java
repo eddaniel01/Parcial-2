@@ -1,7 +1,6 @@
 package pucmm.edu.servicios;
 
 import org.postgresql.ds.PGSimpleDataSource;
-
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;

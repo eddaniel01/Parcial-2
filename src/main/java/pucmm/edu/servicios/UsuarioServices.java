@@ -1,16 +1,9 @@
 package pucmm.edu.servicios;
 
-import dev.morphia.DeleteOptions;
-import dev.morphia.experimental.MorphiaSession;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceException;
 import jakarta.persistence.Query;
-import org.bson.types.ObjectId;
 import pucmm.edu.encapsulaciones.Usuario;
-
-import java.util.List;
-
-import static dev.morphia.query.experimental.filters.Filters.eq;
 
 public class UsuarioServices extends GestionDb<Usuario>{
 

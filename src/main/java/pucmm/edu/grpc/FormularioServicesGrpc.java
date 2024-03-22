@@ -4,10 +4,7 @@ import formulariorn.FormularioRnGrpc;
 import formulariorn.FormularioRnOuterClass;
 import io.grpc.stub.StreamObserver;
 import pucmm.edu.encapsulaciones.Formulario;
-
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import static pucmm.edu.Main.*;
 

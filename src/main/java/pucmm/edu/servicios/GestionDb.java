@@ -1,23 +1,8 @@
 package pucmm.edu.servicios;
 
-import com.mongodb.client.MongoClients;
-import dev.morphia.Datastore;
-import dev.morphia.Morphia;
-
-//import javax.persistence.EntityManager;
-//import javax.persistence.EntityManagerFactory;
-//import javax.persistence.Persistence;
-
 import jakarta.persistence.*;
 import jakarta.persistence.criteria.CriteriaQuery;
-import dev.morphia.experimental.MorphiaSession;
-import dev.morphia.query.Query;
-import org.bson.types.ObjectId;
-
 import java.util.List;
-
-import static dev.morphia.query.experimental.filters.Filters.eq;
-
 /**
  * Created by vacax on 03/06/16.
  */

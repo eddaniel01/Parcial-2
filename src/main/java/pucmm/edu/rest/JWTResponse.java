@@ -1,5 +1,4 @@
 package pucmm.edu.rest;
-
 public class JWTResponse {
     public String jwt;
 

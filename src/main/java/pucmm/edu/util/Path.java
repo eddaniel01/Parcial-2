@@ -1,5 +1,4 @@
 package pucmm.edu.util;
-
 public class Path {
     public static class Web {
         public static final String INDEX = "/";

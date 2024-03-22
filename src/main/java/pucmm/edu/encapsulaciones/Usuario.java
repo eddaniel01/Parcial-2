@@ -1,10 +1,7 @@
 package pucmm.edu.encapsulaciones;
 import jakarta.persistence.GenerationType;
 import pucmm.edu.util.RolesApp;
-
 import jakarta.persistence.*;
-
-
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Objects;

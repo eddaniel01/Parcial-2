@@ -1,10 +1,9 @@
 package pucmm.edu.util;
 import io.javalin.http.Context;
-import io.javalin.http.UploadedFile;
 
 public class RequestUtil {
     public static String getSessionCurrentUser(Context ctx) {
-        return (String) ctx.sessionAttribute("currentUser");
+        return ctx.sessionAttribute("currentUser");
     }
     public static boolean removeSessionAttrLoggedOut(Context ctx) {
         String loggedOut = ctx.sessionAttribute("loggedOut");
@@ -36,7 +35,6 @@ public class RequestUtil {
     public static String getParamId(Context ctx) {
         return ctx.queryParam("id");
     }
-    public static UploadedFile getUploadedFile(Context ctx) { return ctx.uploadedFile("val-foto");}
 
     public static String getQuerySector(Context ctx) {
         return ctx.formParam("val-sector");

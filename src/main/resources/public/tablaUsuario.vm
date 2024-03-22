@@ -1,4 +1,4 @@
-#parse("public/layout.vm")
+  #parse("public/layout.vm")
 #@mainLayout()
 <div class="content-body">
 

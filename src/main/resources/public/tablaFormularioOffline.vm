@@ -9,7 +9,7 @@
     var indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB
 
     //indicamos el nombre y la versión
-    var dataBase = indexedDB.open("proyecto_final", 1);
+    var dataBase = indexedDB.open("parcial-2", 1);
 
     var opcionesGPS = {
         enableHighAccuracy: true,

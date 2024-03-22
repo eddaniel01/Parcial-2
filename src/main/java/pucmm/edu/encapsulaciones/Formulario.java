@@ -1,11 +1,8 @@
 package pucmm.edu.encapsulaciones;
 
-import org.bson.types.ObjectId;
-
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Objects;
-
 import jakarta.persistence.*;
 @Entity
 public class Formulario {

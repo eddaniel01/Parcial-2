@@ -52,7 +52,6 @@ public class Main {
 
         JavalinRenderer.register(new JavalinVelocity(), ".vm");
         usuarioServices = UsuarioServices.getInstancia();
-//        fotoServices = FotoServices.getInstancia();
         formularioServices = FormularioServices.getInstancia();
         cockroachServices = CockroachServices.getInstancia();
         cockroachServices.crearTablas();
@@ -126,8 +125,6 @@ public class Main {
                 System.out.println(generatedJsonSchema.getName());
                 System.out.println(generatedJsonSchema.getContentAsString());
             }
-
-
         });
 
         //

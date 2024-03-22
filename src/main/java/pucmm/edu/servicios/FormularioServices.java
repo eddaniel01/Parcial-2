@@ -1,15 +1,9 @@
 package pucmm.edu.servicios;
 
-import dev.morphia.DeleteOptions;
-import dev.morphia.experimental.MorphiaSession;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
-import org.bson.types.ObjectId;
 import pucmm.edu.encapsulaciones.Formulario;
-
 import java.util.List;
-
-import static dev.morphia.query.experimental.filters.Filters.eq;
 
 public class FormularioServices extends GestionDb<Formulario> {
 

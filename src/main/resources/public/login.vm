@@ -5,34 +5,17 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Playdomtv</title>
-    <!-- Favicon icon -->
+    <title>PUCMM OP</title>
     <link rel="icon" type="image/png" sizes="16x16" href="/images/tv.png">
-    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"> -->
     <link href="/css/style.css" rel="stylesheet">
-
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Aquí irán los estilos personalizados */
+    </style>
 </head>
 
 <body class="h-100">
-
-<!--*******************
-    Preloader start
-********************-->
-<div id="preloader">
-    <div class="loader">
-        <svg class="circular" viewBox="25 25 50 50">
-            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
-        </svg>
-    </div>
-</div>
-<!--*******************
-    Preloader end
-********************-->
-
-
-
-
-
 <div class="login-form-bg h-100">
     <div class="container h-100">
         <div class="row justify-content-center h-100">
@@ -40,35 +23,19 @@
                 <div class="form-input-content">
                     <div class="card login-form mb-0">
                         <div class="card-body pt-5">
-                            <h4 class="text-center">Playdomtv.me</h4>
-                            #if($authenticationFailed)
-                                <div class="alert alert-danger alert-dismissible fade show">
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
-                                    </button>Incorrect username or password! Please try again.</div>
-                            #end
+                            <h4 class="text-center">Oficina de Planeamaiento PUCMM</h4>
+                            <!-- Aquí iría el mensaje de error -->
                             <form class="mt-5 mb-5 login-input" method="post">
                                 <div class="form-group">
-                                    #if($ckUser)
-                                        <input id="login-usuario" name="login-usuario" type="text" class="form-control" placeholder="Usuario" value="$ckUser">
-                                    #else
-                                        <input id="login-usuario" name="login-usuario" type="text" class="form-control" placeholder="Usuario">
-                                    #end
+                                    <input id="login-usuario" name="login-usuario" type="text" class="form-control" placeholder="Usuario">
                                 </div>
                                 <div class="form-group">
-                                    #if($ckPwd)
-                                        <input id="login-clave" name="login-clave" type="password" class="form-control" placeholder="Clave" value="$ckPwd">
-                                    #else
-                                        <input id="login-clave" name="login-clave" type="password" class="form-control" placeholder="Clave">
-                                    #end
+                                    <input id="login-clave" name="login-clave" type="password" class="form-control" placeholder="Clave">
                                 </div>
                                 <div class="form-group text-center">
-                                    #if($ckUser)
-                                        <label class="form-check-label"><input id="login-cookie" name="login-cookie" type="checkbox" class="form-check-input" value="" checked>Recordar Log In</label>
-                                    #else
-                                        <label class="form-check-label"><input id="login-cookie" name="login-cookie" type="checkbox" class="form-check-input" value="">Recordar Log In</label>
-                                    #end
+                                    <label class="form-check-label"><input id="login-cookie" name="login-cookie" type="checkbox" class="form-check-input" value="">Recordar Log In</label>
                                 </div>
-                                <button type="submit" class="btn login-form__btn submit w-100">Sign In</button>
+                                <button type="submit" class="btn btn-primario submit w-100">Sign In</button>
                             </form>
                         </div>
                     </div>
@@ -77,12 +44,8 @@
         </div>
     </div>
 </div>
-
-
-
-
 <!--**********************************
-    Scripts
+Scripts
 ***********************************-->
 <script src="/plugins/common/common.min.js"></script>
 <script src="/js/custom.min.js"></script>
@@ -93,7 +56,6 @@
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
             navigator.serviceWorker.register('/serviceworkers.js', { scope: '/' }).then(function(registration) {
-                // Notificando el registro del service workwe
                 console.log('Registrando el servicio en el ambiente: ', registration.scope);
             }, function(err) {
                 console.log('Service Worker falló el registro: ', err);
@@ -102,4 +64,5 @@
     }
 </script>
 </body>
+
 </html>

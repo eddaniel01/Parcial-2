@@ -1,6 +1,5 @@
 #parse("public/layout.vm")
 #@mainLayout()
-## <script type="text/javascript" src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script>
 <script type="text/javascript" src="/js/webcam-easy.min.js"></script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel='stylesheet' type='text/css' media='screen' href='/css/webcam-demo.css'>
@@ -112,8 +111,6 @@
                     nivel: document
                         .querySelector("#val-nivel")
                         .value,
-                    mimetype: mime,
-                    base64: base,
                     latitude: 19.4517000,
                     longitude: -70.6970300,
                     accuracy: 0
@@ -221,37 +218,10 @@
                                         </select>
                                     </div>
                                 </div>
-##                                <div id="errorMsg" class="col-12 col-md-6 alert-danger d-none">
-##                                    Fail to start camera, please allow permision to access camera.
-##                                    <br/>
-##                                    If you are browsing through social media built in browsers, you would need to open the page in
-##                                    Sarafi (iPhone)/ Chrome (Android)
-##                                    <button id="closeError" class="btn btn-primary ml-3">OK</button>
-##                                </div>
-##                                <div class="md-modal md-effect-12">
-##                                    <div id="app-panel" class="app-panel md-content row p-0 m-0">
-##                                        <div id="webcam-container" class="webcam-container col-12 d-none p-0 m-0">
-##                                            <video id="webcam" autoplay="autoplay" playsinline="playsinline"></video>
-##                                            <canvas id="canvas" class="d-none"></canvas>
-##                                            <div class="flash"></div>
-##                                            ## <audio id="snapSound" src="audio/snap.wav" preload="auto"></audio>
-##                                        </div>
-##                                        <div id="cameraControls" class="cameraControls">
-##                                            <a href="#" id="exit-app" title="Exit App" class="d-none">
-##                                                <i class="material-icons">exit_to_app</i>
-##                                            </a>
-##                                            <a href="#" id="take-photo" title="Take Photo">
-##                                                <i class="material-icons">camera_alt</i>
-##                                            </a>
-##                                            <a href="#" id="resume-camera" title="Resume Camera" class="d-none">
-##                                                <i class="material-icons">camera_front</i>
-##                                            </a>
-##                                        </div>
-##                                    </div>
-##                                </div>
+
                                 <div class="form-group row">
                                     <div class="col-lg-8 ml-auto">
-                                        <button type="button" class="btn btn-primary">Guardar</button>
+                                        <button type="button" class="btn btn-primary" onclick="guardar('','')">Guardar</button>
                                     </div>
                                 </div>
                             </form>
@@ -264,147 +234,6 @@
     <!-- #/ container -->
 </div>
 <script>
-    // const webcamElement = document.getElementById('webcam');
 
-    // const canvasElement = document.getElementById('canvas');
-
-    //const snapSoundElement = document.getElementById('snapSound');
-
-    // const webcam = new Webcam(webcamElement, 'user', canvasElement);
-
-    //let picture;
-    //
-    // function iniciarCamara() {
-    //     if (document.getElementById("val-nombre").value.length >= 2 && document.getElementById("val-sector").value.length >= 3 && document.getElementById("val-nivel").value.length >= 5) {
-    //         $('.md-modal').addClass('md-show');
-    //         webcam
-    //             .start()
-    //             .then(result => {
-    //                 cameraStarted();
-    //                 //console.log("webcam started");
-    //             })
-    //             .catch(err => {
-    //                 displayError();
-    //             });
-    //     }
-    // }
-
-    // $('#closeError').click(function () {
-    //     // webcam.stop();
-    //     cameraStopped();
-    //     $('.md-modal').addClass('md-show');
-    //     webcam
-    //         .start()
-    //         .then(result => {
-    //             cameraStarted();
-    //             //console.log("webcam started");
-    //         })
-    //         .catch(err => {
-    //             displayError();
-    //         });
-    // });
-
-    // $("#take-photo").click(function () {
-    //     beforeTakePhoto();
-    //     picture = webcam.snap();
-    //     afterTakePhoto();
-    // });
-
-    // $("#resume-camera").click(function () {
-    //     webcam
-    //         .stream()
-    //         .then(facingMode => {
-    //             removeCapture();
-    //         });
-    // });
-
-    // $("#exit-app").click(function () {
-    //     removeCapture();
-    //     console.log(picture.split(',')[0].split(';')[0].split(':')[1]);
-    //     // console.log(picture.split(',')[1])
-    //     reduce_image_file_size(picture, 100, 100).then(function (newImg) {
-    //         guardar(newImg.split(',')[0].split(';')[0].split(':')[1], newImg.split(',')[1]);
-    //     });
-    // });
-    //
-    // function displayError(err = '') {
-    //     if (err != '') {
-    //         $("#errorMsg").html(err);
-    //     }
-    //     $("#errorMsg").removeClass("d-none");
-    // }
-    //
-    // function cameraStarted() {
-    //     $("#errorMsg").addClass("d-none");
-    //     $('.flash').hide();
-    //     $(".webcam-container").removeClass("d-none");
-    //     window.scrollTo(0, 0);
-    //     $('content-body').css('overflow-y', 'hidden');
-    // }
-
-    // function cameraStopped() {
-    //     $("#errorMsg").addClass("d-none");
-    //     $(".webcam-container").addClass("d-none");
-    //     $('.md-modal').removeClass('md-show');
-    // }
-
-    // function beforeTakePhoto() {
-    //     $('.flash')
-    //         .show()
-    //         .animate({
-    //             opacity: 0.3
-    //         }, 500)
-    //         .fadeOut(500)
-    //         .css({'opacity': 0.7});
-    //     window.scrollTo(0, 0);
-    //     $('#cameraControls').addClass('d-none');
-    // }
-
-    // function afterTakePhoto() {
-    //     webcam.stop();
-    //     $('#canvas').removeClass('d-none');
-    //     $('#take-photo').addClass('d-none');
-    //     $('#exit-app').removeClass('d-none');
-    //     $('#resume-camera').removeClass('d-none');
-    //     $('#cameraControls').removeClass('d-none');
-    // }
-    //
-    // function removeCapture() {
-    //     $('#canvas').addClass('d-none');
-    //     $('#cameraControls').removeClass('d-none');
-    //     $('#take-photo').removeClass('d-none');
-    //     $('#exit-app').addClass('d-none');
-    //     $('#resume-camera').addClass('d-none');
-    // }
-    //
-    // async function reduce_image_file_size(base64Str, MAX_WIDTH = 450, MAX_HEIGHT = 450) {
-    //     let resized_base64 = await new Promise((resolve) => {
-    //         let img = new Image()
-    //         img.src = base64Str
-    //         img.onload = () => {
-    //             let canvas = document.createElement('canvas')
-    //             let width = img.width
-    //             let height = img.height
-    //
-    //             if (width > height) {
-    //                 if (width > MAX_WIDTH) {
-    //                     height *= MAX_WIDTH / width
-    //                     width = MAX_WIDTH
-    //                 }
-    //             } else {
-    //                 if (height > MAX_HEIGHT) {
-    //                     width *= MAX_HEIGHT / height
-    //                     height = MAX_HEIGHT
-    //                 }
-    //             }
-    //             canvas.width = width
-    //             canvas.height = height
-    //             let ctx = canvas.getContext('2d')
-    //             ctx.drawImage(img, 0, 0, width, height)
-    //             resolve(canvas.toDataURL()) // this will return base64 image results after resize
-    //         }
-    //     });
-    //     return resized_base64;
-    // }
 </script>
 #end

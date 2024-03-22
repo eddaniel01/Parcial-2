@@ -4,7 +4,6 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>pucmm.edu.encapsulaciones.Formulario</class>
         <class>pucmm.edu.encapsulaciones.Usuario</class>
-<!--        <class>pucmm.edu.encapsulaciones.Foto</class>-->
         <properties>
             <!-- <property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:test" /> -->
             <!-- <property name="jakarta.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/baseBlog1" /> -->

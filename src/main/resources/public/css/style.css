@@ -25,19 +25,19 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 @import url(../plugins/metismenu/css/metisMenu.min.css);
 @import url(../plugins/bootstrap-select/dist/css/bootstrap-select.min.css);
 .gradient-1, .dropdown-mega-menu .ext-link.link-1 a, .morris-hover, .datamaps-hoverover {
-  background-image: linear-gradient(230deg, #759bff, #843cf6); }
+  background-image: linear-gradient(230deg, #75BDE0, #F8D49B); }
 
 .gradient-2, .dropdown-mega-menu .ext-link.link-3 a {
-  background-image: linear-gradient(230deg, #fc5286, #fbaaa2); }
+  background-image: linear-gradient(230deg, #F8BC9B, #F89B9B); }
 
 .gradient-3, .dropdown-mega-menu .ext-link.link-2 a, .header-right .icons .user-img .activity {
-  background-image: linear-gradient(230deg, #ffc480, #ff763b); }
+  background-image: linear-gradient(230deg, #F89B9B, #F8D49B); }
 
 .gradient-4, .sidebar-right .nav-tabs .nav-item .nav-link.active::after, .sidebar-right .nav-tabs .nav-item .nav-link.active span i::before {
-  background-image: linear-gradient(230deg, #0e4cfd, #6a8eff); }
+  background-image: linear-gradient(230deg, #75BDE0, #F8D49B); }
 
 .gradient-5 {
-  background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%); }
+  background-image: linear-gradient(to right, #F8D49B 0%, #F89B9B 100%); }
 
 .gradient-6 {
   background-image: linear-gradient(135deg, #97ABFF 10%, #123597 100%); }
@@ -62,23 +62,10 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 :root {
-  --blue: #324cdd;
-  --indigo: #6610f2;
-  --purple: #6f42c1;
-  --pink: #e83e8c;
-  --red: #ec0c38;
-  --orange: #fd7e14;
-  --yellow: #fa3a0e;
-  --green: #2dce89;
-  --teal: #00A9A2;
-  --cyan: #11cdef;
-  --white: #fff;
-  --gray: #f7fafc;
-  --gray-dark: #333333;
-  --primary: #7571f9;
-  --secondary: #9097c4;
-  --success: #6fd96f;
-  --info: #4d7cff;
+  --primary: #75BDE0;
+  --secondary: #F8D49B;
+  --success: #F8BC9B;
+  --info: #F89B9B;
   --warning: #f29d56;
   --danger: #ff5e5e;
   --light: #f8f9fa;
@@ -4190,7 +4177,7 @@ button.close {
   .bs-popover-top .arrow::before, .bs-popover-auto[x-placement^="top"] .arrow::before {
     bottom: 0;
     border-top-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-top .arrow::after,
   .bs-popover-auto[x-placement^="top"] .arrow::after {
     bottom: 1px;
@@ -4210,7 +4197,7 @@ button.close {
   .bs-popover-right .arrow::before, .bs-popover-auto[x-placement^="right"] .arrow::before {
     left: 0;
     border-right-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-right .arrow::after,
   .bs-popover-auto[x-placement^="right"] .arrow::after {
     left: 1px;
@@ -4227,7 +4214,7 @@ button.close {
   .bs-popover-bottom .arrow::before, .bs-popover-auto[x-placement^="bottom"] .arrow::before {
     top: 0;
     border-bottom-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-bottom .arrow::after,
   .bs-popover-auto[x-placement^="bottom"] .arrow::after {
     top: 1px;
@@ -4256,7 +4243,7 @@ button.close {
   .bs-popover-left .arrow::before, .bs-popover-auto[x-placement^="left"] .arrow::before {
     right: 0;
     border-left-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-left .arrow::after,
   .bs-popover-auto[x-placement^="left"] .arrow::after {
     right: 1px;
@@ -9866,7 +9853,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   /* Firefox 18- */
   color: #777 !important; }
 
-/*    
+/*
 Input Style
 ------------------------*/
 .form-group {
@@ -11640,7 +11627,7 @@ table.dataTable thead .sorting::after {
   background-color: #4d7cff !important; }
 
 .geolocation {
-  width: 100%; 
+  width: 100%;
   height: 300px; }
 
 .stat-widget-one {

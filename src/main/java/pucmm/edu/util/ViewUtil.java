@@ -4,9 +4,6 @@ import io.javalin.http.Context;
 import java.util.HashMap;
 import java.util.Map;
 import io.javalin.http.Handler;
-
-import static pucmm.edu.Main.*;
-
 import static pucmm.edu.util.RequestUtil.*;
 
 public class ViewUtil {
