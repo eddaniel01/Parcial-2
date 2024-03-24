@@ -82,7 +82,7 @@
                         <span class="nav-text">Formularios</span>
                     </a>
                     <ul aria-expanded="false">
-                        <li><a href="/formularios">Listar Enviados</a></li>
+##                        <li><a href="/formularios">Listar Enviados</a></li>
                         <li><a href="/tabla">Listar No Enviados</a></li>
                         <li><a href="/crear">Crear</a></li>
                     </ul>
