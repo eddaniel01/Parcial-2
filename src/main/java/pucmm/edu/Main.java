@@ -21,9 +21,7 @@ import pucmm.edu.controladores.LoginControlador;
 import pucmm.edu.controladores.UsuarioControlador;
 import pucmm.edu.encapsulaciones.Formulario;
 import pucmm.edu.encapsulaciones.Usuario;
-import pucmm.edu.grpc.FormularioServicesGrpc;
-import pucmm.edu.rest.ProviderExample;
-import pucmm.edu.rest.RestControlador;
+
 import pucmm.edu.servicios.CockroachServices;
 import pucmm.edu.servicios.FormularioServices;
 import pucmm.edu.servicios.UsuarioServices;
@@ -45,10 +43,8 @@ public class Main {
     public static FormularioServices formularioServices;
     public static CockroachServices cockroachServices;
     public static String usuarioActual;
-    public static JWTProvider<Usuario> provider;
 
     public static void main(String[] args) throws IOException, InterruptedException, SQLException {
-        provider = ProviderExample.createHMAC512();
 
         JavalinRenderer.register(new JavalinVelocity(), ".vm");
         usuarioServices = UsuarioServices.getInstancia();
@@ -195,14 +191,6 @@ public class Main {
                 get(Path.Web.FETCH_FORMULARIOS, FormularioControlador.fetchAllFormularios, RolesApp.ROLE_USUARIO);
             });
 
-            path("/rest", () -> {
-//          LOGIN / JWT GENERATE
-                post("/login", RestControlador.loginPost);
-//          FORM X USER
-                get("/form", RestControlador.formsXuser);
-//          CREAR FORM
-                post("/form", RestControlador.crearForm);
-            });
         });
         app.error(401, ViewUtil.error401);
         app.error(404, ViewUtil.error404);
@@ -250,26 +238,6 @@ public class Main {
             });
         }, RolesApp.ROLE_USUARIO);
 
-        System.out.println("Servidor gRPC Implementado en Java - JConf Dominicana 2021");
-
-        //Puerto del servidor.
-        int port = 50051;
-
-        //Inicializando el servidor
-        Server server = ServerBuilder.forPort(port)
-                .addService(new FormularioServicesGrpc())// indicando el servicio registrado.
-                .build()
-                .start();
-        System.out.println("Servidor gRPC iniciando y escuchando en " + port);
-
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-            System.err.println("Cerrando servidor por la JVM ");
-            if (server != null) {
-                server.shutdown();
-            }
-            System.err.println("Servidor abajo!...");
-        }));
-        server.awaitTermination();
     }
 
     /**
