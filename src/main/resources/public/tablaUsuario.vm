@@ -55,8 +55,8 @@
                                         <td>$rol</td>
                                         <td>$user.getFecha()</td>
                                         <td><span>
-                                           <button type="button" class="btn btn-primary" onclick="location.href='/usuario?id=$user.getId()'">Editar</button>
-                                            <button type="button" class="btn btn-danger" onclick="return confirm('Esta seguro que desea borrar este usuario?');" onclick="location.href='/eliminarUsuario?id=$user.getId()'">Eliminar</button>
+                                           <a href="/usuario?id=$user.getId()" data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-secondary btn-sm" role="button" >Editar</a>
+                                            <a href="/eliminarUsuario?id=$user.getId()" onclick="return confirm('Esta seguro que desea borrar este usuario?');" data-toggle="tooltip" data-placement="top" title="Remove" class="btn btn-danger btn-sm" role="button">Eliminar</a>
                                         </span></td>
                                     </tr>
                                 #end
