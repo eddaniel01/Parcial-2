@@ -23,8 +23,6 @@
             autoIncrement: true
         });
     };
-
-    //El evento que se dispara una vez, lo
     dataBase.onsuccess = function (e) {
         console.log('Proceso ejecutado de forma correctamente');
         cargarPagina();
@@ -33,20 +31,18 @@
     dataBase.onerror = function (e) {
         console.error('Error en el proceso: ' + e.target.errorCode);
     };
-
     var idForm = localStorage.getItem("idForm");
     if (idForm == null) {
         idForm = 0;
     }
 
-    function guardar(mime, base) {
+    function guardar() {
         if (document.getElementById("val-nombre").value.length >= 2 && document.getElementById("val-sector").value.length >= 3 && document.getElementById("val-nivel").value.length >= 5) {
             if (idForm > 0) {
                 var data = dataBase
                     .result
                     .transaction(["formularios"], "readwrite");
                 var formularios = data.objectStore("formularios");
-                //buscando estudiante por la referencia al key.
                 formularios
                     .get(Number(idForm))
                     .onsuccess = function (e) {
@@ -82,8 +78,7 @@
                     };
             } else {
                 var dbActiva = dataBase.result; //Nos retorna una referencia al IDBDatabase.
-
-                // Para realizar una operación de agreagr, actualización o borrar. Es necesario abrir una
+                // Para realizar una operación de agregar, actualización o borrar. Es necesario abrir una
                 // transacción e indicar un modo: readonly, readwrite y versionchange
                 var transaccion = dbActiva.transaction(["formularios"], "readwrite");
 
@@ -110,9 +105,6 @@
                     nivel: document
                         .querySelector("#val-nivel")
                         .value,
-                    latitude: 19.4517000,
-                    longitude: -70.6970300,
-                    accuracy: 0
                 });
                 request.onerror = function (e) {
                     var mensaje = "Error: " + e.target.errorCode;
@@ -138,7 +130,6 @@
                 .replace("/tabla");
         }
     }
-
     function cargarPagina() {
         if (idForm > 0) {
             //abriendo la transacción en modo readonly.
@@ -170,9 +161,29 @@
                 };
         }
     }
+    // Llamar a la función obtenerUbicacion() al cargar la página
+    window.onload = function() {
+        obtenerUbicacion();
+    };
+    function obtenerUbicacion() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var latitude = position.coords.latitude;
+                var longitude = position.coords.longitude;
+                var accuracy = position.coords.accuracy;
+
+                // Asignar los valores a los campos de latitud, longitud y precisión
+                document.getElementById("val-latitud").value = latitude;
+                document.getElementById("val-longitud").value = longitude;
+                document.getElementById("val-accuracy").value = accuracy;
+            });
+        } else {
+            alert("Geolocalización no es compatible con este navegador.");
+        }
+    }
+
 </script>
 <div class="content-body">
-    <!-- row -->
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-lg-12">
@@ -217,7 +228,9 @@
                                         </select>
                                     </div>
                                 </div>
-
+                                <input type="hidden" id="val-latitud" name="val-latitud">
+                                <input type="hidden" id="val-longitud" name="val-longitud">
+                                <input type="hidden" id="val-accuracy" name="val-accuracy">
                                 <div class="form-group row">
                                     <div class="col-lg-8 ml-auto">
                                         <button type="button" class="btn btn-primary" onclick="guardar('','')">Guardar</button>

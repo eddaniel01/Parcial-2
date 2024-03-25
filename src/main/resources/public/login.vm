@@ -20,8 +20,7 @@
                 <div class="form-input-content">
                     <div class="card login-form mb-0">
                         <div class="card-body pt-5">
-                            <h4 class="text-center">Oficina de Planeamaiento PUCMM</h4>
-                            <!-- Aquí iría el mensaje de error -->
+                            <h4 class="text-center">Oficina de Planeamiento PUCMM</h4>
                             <form class="mt-5 mb-5 login-input" method="post">
                                 <div class="form-group">
                                     <input id="login-usuario" name="login-usuario" type="text" class="form-control" placeholder="Usuario">
@@ -32,7 +31,7 @@
                                 <div class="form-group text-center">
                                     <label class="form-check-label"><input id="login-cookie" name="login-cookie" type="checkbox" class="form-check-input" value="">Recordar Log In</label>
                                 </div>
-                                <button type="submit" class="btn btn-primario submit w-100">Sign In</button>
+                                <button type="submit" class="btn btn-primario submit w-100">Iniciar Sesión</button>
                             </form>
                         </div>
                     </div>
@@ -58,5 +57,4 @@
     }
 </script>
 </body>
-
 </html>

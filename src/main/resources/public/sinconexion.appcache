@@ -1,6 +1,5 @@
 CACHE MANIFEST
 # v12 - Para obligar al cambio bueno mantener una versión.
-# Esto es un comentario.
 
 #Trama que indica que 
 CACHE:
@@ -12,7 +11,6 @@ CACHE:
 /icons/simple-line-icons/fonts/Simple-Line-Icons4c82.woff?-i3a2kk
 /images/tv.png
 /plugins/tables/css/datatable/dataTables.bootstrap4.min.css
-/images/playdom.png
 /images/user/form-user.png
 /plugins/validation/jquery.validate.min.js
 /plugins/validation/jquery.validate-init.js
@@ -43,9 +41,7 @@ CACHE:
 /offline
 /tabla
 /crear
-/css/webcam-demo.css
 /js/jquery-3.3.1.min.js
-/js/webcam-easy.min.js
 
 NETWORK:
 /

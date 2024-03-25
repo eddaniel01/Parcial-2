@@ -8,9 +8,9 @@ var urlsToCache = [
     '/icons/simple-line-icons/fonts/Simple-Line-Icons4c82.ttf?-i3a2kk',
     '/icons/simple-line-icons/fonts/Simple-Line-Icons4c82.woff2?-i3a2kk',
     '/icons/simple-line-icons/fonts/Simple-Line-Icons4c82.woff?-i3a2kk',
-    '/images/tv.png',
+    // '/images/tv.png',
     '/plugins/tables/css/datatable/dataTables.bootstrap4.min.css',
-    '/images/playdom.png',
+    // '/images/playdom.png',
     '/images/user/form-user.png',
     '/plugins/validation/jquery.validate.min.js',
     '/plugins/validation/jquery.validate-init.js',
@@ -41,9 +41,9 @@ var urlsToCache = [
     '/offline',
     '/tabla',
     '/crear',
-    '/css/webcam-demo.css',
+    // '/css/webcam-demo.css',
     '/js/jquery-3.3.1.min.js',
-    '/js/webcam-easy.min.js',
+    // '/js/webcam-easy.min.js',
 ];
 //ruta para fallback.
 var fallback = "/offline"
