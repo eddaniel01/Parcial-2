@@ -111,6 +111,10 @@ body {
   text-align: left;
   background-color: #F3F3F9; }
 
+.login-form-bg {
+  background-image: linear-gradient(to right, #8ADFE3 33%, #55C5D1 66%, #4699C2 100%);
+}
+
 [tabindex="-1"]:focus {
   outline: 0 !important; }
 
@@ -9520,6 +9524,14 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 
 .login-form__intro h4 {
   padding: 10px 0; }
+
+.card.login-form {
+  border-radius: 10px; /* Puedes ajustar este valor según tu preferencia */
+}
+
+.main-layout-bg {
+  background-image: linear-gradient(to right, #8ADFE3 33%, #55C5D1 66%, #4699C2 100%);
+}
 
 .login-form__intro a {
   color: #596A81;

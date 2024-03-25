@@ -19,7 +19,7 @@
         </svg>
     </div>
 </div>
-<div id="main-wrapper">
+<div id="main-wrapper" class="main-layout-bg">
     <div class="header">
         <div class="header-content clearfix">
             <div class="nav-control">

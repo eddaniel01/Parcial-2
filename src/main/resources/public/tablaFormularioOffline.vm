@@ -82,9 +82,11 @@
                     dataFila += '<td>'+formularios_recuperados[key].sector+'</td>';
                     dataFila += '<td>'+formularios_recuperados[key].nivel+'</td>';
                     dataFila += '<td><span>';
-                    dataFila += '<a href="#" onclick="abrirForm('+formularios_recuperados[key].id+'); return false;" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fa fa-pencil color-muted m-r-5"></i></a>';
-                    dataFila += '<a href="#" onclick="borrarFormulario('+formularios_recuperados[key].id+'); return false;" data-toggle="tooltip" data-placement="top" title="Eliminar"><i class="fa fa-remove color-danger ml-2"></i></a>';
-                    dataFila += "<a href='#' onclick='enviarForm("+JSON.stringify(formularios_recuperados[key])+"); return false;' data-toggle='tooltip' data-placement='top' title='Enviar'><i class='fa fa-send color-success ml-2'></i></a>";
+                    dataFila += '<a href="#" onclick="abrirForm('+formularios_recuperados[key].id+'); return false;" data-toggle="tooltip" data-placement="top" title="Editar" class="btn btn-info btn-sm" role="button">Editar</a>';
+                    dataFila += '<a>      </a>';
+                    dataFila += '<a href="#" onclick="borrarFormulario('+formularios_recuperados[key].id+'); return false;" data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-sm" role="button"  >Eliminar</a>';
+                    dataFila += '<a>      </a>';
+                    dataFila += "<a href='#' onclick='enviarForm("+JSON.stringify(formularios_recuperados[key])+"); return false;' data-toggle='tooltip' data-placement='top' title='Enviar' class='btn btn-info btn-sm' role='button'>Enviar</a>";
                     dataFila += '</span></td>';
                     dataFila += '</tr>';
                 }
